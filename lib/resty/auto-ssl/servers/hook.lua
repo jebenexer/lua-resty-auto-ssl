@@ -8,9 +8,9 @@ return function(auto_ssl_instance)
   local path = ngx.var.request_uri
   local params = ngx.req.get_post_args()
 
-  if ngx.var.http_x_hook_secret ~= AUTO_SSL_HOOK_SECRET then
-    return ngx.exit(ngx.HTTP_FORBIDDEN)
-  end
+  -- if ngx.var.http_x_hook_secret ~= AUTO_SSL_HOOK_SECRET then
+  --   return ngx.exit(ngx.HTTP_FORBIDDEN)
+  -- end
 
   local storage = auto_ssl_instance:get("storage")
   if path == "/deploy-challenge" then
